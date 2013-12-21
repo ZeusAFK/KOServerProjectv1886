@@ -4348,8 +4348,7 @@ void CUser::OnDeath(Unit *pKiller)
                         g_pMain->WriteDeathUserLogFile(string_format("[ NPC/MONSTER - %d:%d:%d ] SID=%d,Killer=%s,Target=%s,Zone=%d,X=%d,Z=%d,TargetExp=%d,LostExp=%d\n",time.GetHour(),time.GetMinute(),time.GetSecond(),pNpc->m_sSid,pKiller->GetName().c_str(),GetName().c_str(),GetZoneID(),uint16(GetX()),uint16(GetZ()),m_iExp, nExpLost));
                         ExpChange(-nExpLost);                        
                 }
-                else
-                { if (pKiller->isNPC())
+                else if (pKiller->isNPC())
                 {
                         int64 nExpLost = 0;
 

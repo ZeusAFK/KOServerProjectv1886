@@ -1069,7 +1069,7 @@ void CKingSystem::KingTaxSystem(CUser * pUser, Packet & pkt)
 			// Let all users in your nation know.
 			result << int16(1) << byTerritoryTariff << m_byNation;
 		        DateTime time;
-                        g_pMain->WriteChatLogFile(string_format("[ KING - %d:%d:%d ] %s : %s ( Zone=%d, X=%d, Z=%d )\n",time.GetHour(),time.GetMinute(),time.GetSecond(),pUser->GetName().c_str(),strMessage.c_str(),pUser->GetZoneID(),uint16(pUser->GetX()),uint16(pUser->GetZ())));
+                        g_pMain->WriteChatLogFile(string_format("[ KING - %d:%d:%d ] %s : %s ( Zone=%d, X=%d, Z=%d )\n",time.GetHour(),time.GetMinute(),time.GetSecond(),pUser->GetName().c_str(),"Update the tariff",pUser->GetZoneID(),uint16(pUser->GetX()),uint16(pUser->GetZ())));
 
 			// Update the database (TODO: Implement the request)
 			g_pMain->AddDatabaseRequest(result, pUser);
